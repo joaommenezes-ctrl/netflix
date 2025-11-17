@@ -8,7 +8,7 @@ export const styles = StyleSheet.create({
     paddingHorizontal: 15,
     paddingTop: 50,
     paddingBottom: 10,
-    backgroundColor: '#000',
+    backgroundColor: '#081f0d',
   },
   headerTitle: {
     color: 'white',
@@ -20,15 +20,15 @@ export const styles = StyleSheet.create({
   },
   icon: {
     color: 'white',
-    fontSize: 18,
-    marginLeft: 15,
+    fontSize: 30,
+    marginLeft: 25,
   },
   filterButtonsContainer: {
     flexDirection: 'row',
     justifyContent: 'flex-start',
     paddingVertical: 10,
     paddingHorizontal: 10,
-    backgroundColor: '#000',
+    backgroundColor: '#081f0d',
   },
   filterButton: {
     borderWidth: 1,

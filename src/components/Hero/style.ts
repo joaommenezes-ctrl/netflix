@@ -3,7 +3,7 @@ import { StyleSheet } from "react-native";
 export const styles = StyleSheet.create({
   background: {
     width: '100%',
-    height: 450,
+    height: '100%',
     justifyContent: 'flex-end',
   },
   overlay: {
@@ -56,5 +56,12 @@ export const styles = StyleSheet.create({
     fontSize: 16,
     fontWeight: 'bold',
     marginLeft: 5,
+  },
+  cardContainer: {
+    marginHorizontal: 16,
+    marginTop: 10,
+    borderRadius: 15,
+    overflow: 'hidden',
+    height: 450,
   },
 });
