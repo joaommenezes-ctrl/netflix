@@ -32,7 +32,7 @@ export function Login({ navigation }: Props) {
   const handleSignIn = async () => {
     try {
       await signIn({ email, password });
-      navigation.replace('MainApp');
+      navigation.navigate('MainApp');
     } catch (error) {
       console.error(error);
       Alert.alert("Erro no Login", "Email ou senha inválidos. Tente novamente.");
