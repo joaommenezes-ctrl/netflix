@@ -10,7 +10,7 @@
     "splash": {
       "image": "./assets/IconNetflix.png", 
       "resizeMode": "contain",
-      "backgroundColor": "black"
+      "backgroundColor": "#000"
     },
     "extra": {
       "API_URL": "https://68dda3cbd7b591b4b78cfc53.mockapi.io/usuarios"

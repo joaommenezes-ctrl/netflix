@@ -10,7 +10,7 @@ import { StackNavigationProp } from '@react-navigation/stack';
 type RootStackParamList = {
   Abertura: undefined;
   Login: undefined;
-  StackHome: undefined;
+  MainApp: undefined; 
 };
 
 type LoginScreenNavigationProp = StackNavigationProp<
@@ -32,7 +32,7 @@ export function Login({ navigation }: Props) {
   const handleSignIn = async () => {
     try {
       await signIn({ email, password });
-      navigation.replace('StackHome');
+      navigation.replace('MainApp');
     } catch (error) {
       console.error(error);
       Alert.alert("Erro no Login", "Email ou senha inválidos. Tente novamente.");
