@@ -4,13 +4,13 @@
     "slug": "netflix",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/netflixLogo.jpg", 
+    "icon": "./assets/IconNetflix.png", 
     "userInterfaceStyle": "dark",
     "newArchEnabled": true,
     "splash": {
-      "image": "./assets/netflixLogo.jpg", 
+      "image": "./assets/IconNetflix.png", 
       "resizeMode": "contain",
-      "backgroundColor": "#000000"
+      "backgroundColor": "black"
     },
     "extra": {
       "API_URL": "https://68dda3cbd7b591b4b78cfc53.mockapi.io/usuarios"

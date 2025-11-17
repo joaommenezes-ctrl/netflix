@@ -1,22 +1,31 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { LoadingScreen } from '../LoadingScrenn'; 
+import { StackNavigationProp } from '@react-navigation/stack';
 
-const INITIAL_LOADING_TIME = 3000; 
+type RootStackParamList = {
+  Abertura: undefined;
+  Login: undefined;
+  StackHome: undefined;
+};
 
-export function Abertura() {
-  const [isLoading, setIsLoading] = useState(true);
+type AberturaNavigationProp = StackNavigationProp<
+  RootStackParamList,
+  'Abertura'
+>;
+
+interface Props {
+  navigation: AberturaNavigationProp;
+}
+
+export function Abertura({ navigation }: Props) {
 
   useEffect(() => {
     const timer = setTimeout(() => {
-      setIsLoading(false); 
-    }, INITIAL_LOADING_TIME);
+      navigation.replace('Login');
+    }, 3000);
 
     return () => clearTimeout(timer);
-  }, []);
+  }, [navigation]);
 
-  if (isLoading) {
-    return <LoadingScreen />; 
-  }
-
-  
+  return <LoadingScreen />; 
 }

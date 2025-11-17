@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import { Alert } from 'react-native';
 import Constants from 'expo-constants';
 
 interface UserCredentials {
@@ -18,17 +17,14 @@ const API_URL = Constants.expoConfig?.extra?.API_URL as string;
 export const useLogin = () => {
     const [loading, setLoading] = useState(false);
 
-    const signIn = async ({ email, password }: UserCredentials): Promise<boolean> => {
+    const signIn = async ({ email, password }: UserCredentials): Promise<void> => {
         if (!email || !password) {
-            Alert.alert('Erro', 'Por favor, preencha todos os campos.');
-            return false;
+            throw new Error('Por favor, preencha todos os campos.');
         }
 
         if (!API_URL) {
-            Alert.alert('Erro de Configuração', 'A URL da API não foi carregada. Verifique o app.json.');
-            return false;
+            throw new Error('A URL da API não foi carregada. Verifique o app.json.');
         }
-
         setLoading(true);
 
         try {
@@ -45,17 +41,14 @@ export const useLogin = () => {
             );
 
             if (usuarioEncontrado) {
-                Alert.alert('Sucesso!', `Bem-vindo, ${usuarioEncontrado.nome || 'Usuário'}!`);
-                return true;
+                return;
             } else {
-                Alert.alert('Erro de Login', 'Email ou senha incorretos.');
-                return false;
+                throw new Error('Email ou senha incorretos.');
             }
         } catch (error) {
             const errorMessage = error instanceof Error ? error.message : 'Erro desconhecido';
             console.error('Erro de Login:', errorMessage);
-            Alert.alert('Erro', 'Não foi possível realizar o login. Tente novamente mais tarde.');
-            return false;
+            throw new Error(errorMessage);
         } finally {
             setLoading(false);
         }

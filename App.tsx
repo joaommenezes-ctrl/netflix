@@ -1,10 +1,8 @@
-import { Abertura } from './src/components/Abertura' 
-import { Login } from './src/pages/Login';
+import { StatusBar } from 'react-native';
+import  { Routers }  from './src/routers';
 
 export default function App() {
   return (
-    //  <Abertura />
-    <Login />
-    
+    <Routers />
   );
 }
