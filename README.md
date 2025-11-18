@@ -26,7 +26,7 @@
 Este projeto é um clone mobile (aplicativo) da interface da **Netflix**, desenvolvido utilizando **React Native**. O objetivo foi replicar fielmente o design visual e a experiência do usuário, cobrindo as telas essenciais:
 
 1.  **Tela de Abertura (Loading Screen)**
-2.  **Tela de Autenticação (Login/Cadastro)**
+2.  **Tela de Autenticação (Login)**
 3.  **Tela Inicial (Home)**
 
 O diferencial entregue neste trabalho é a implementação da **lógica de login funcional**, demonstrando a capacidade de integração de UI com o fluxo de autenticação.
@@ -36,7 +36,7 @@ O diferencial entregue neste trabalho é a implementação da **lógica de login
 ### 🚀 Funcionalidades Principais
 
 * **Abertura Fiel:** Componente de abertura replicando o visual da marca Netflix.
-* **Design de Login:** Interfaces de Login e Cadastro com o layout idêntico ao original.
+* **Design de Login:** Interfaces de Login com o layout idêntico ao original.
 * **Login Funcional:** Implementação completa da lógica de autenticação.
     * Validação de formato de e-mail e tratamento de campos vazios.
     * Verificação de credenciais e mensagens de erro específicas.
