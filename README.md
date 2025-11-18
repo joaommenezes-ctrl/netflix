@@ -2,8 +2,6 @@
 
 <p align="center">
   <img src="https://img.shields.io/badge/React_Native-61DAFB?style=for-the-badge&logo=react&logoColor=black" alt="React Native Badge">
-  <img src="https://img.shields.io/badge/Status-Concluído-4CAF50?style=for-the-badge" alt="Status Badge">
-  <img src="https://img.shields.io/badge/Licença-MIT-blue?style=for-the-badge" alt="License Badge">
 </p>
 
 <h4 align="center">
