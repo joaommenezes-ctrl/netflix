@@ -60,8 +60,12 @@ export const styles = StyleSheet.create({
   cardContainer: {
     marginHorizontal: 16,
     marginTop: 10,
+    marginLeft: 30,
+    marginRight:30,
+    borderWidth: 2,
+    borderColor: 'rgba(128,128,128,0.5)',
     borderRadius: 15,
     overflow: 'hidden',
-    height: 450,
+    height: 500,
   },
 });
