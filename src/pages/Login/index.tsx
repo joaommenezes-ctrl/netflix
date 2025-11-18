@@ -4,7 +4,7 @@ import { styles } from './style';
 import NetflixButton from '../../components/NetflixButton';
 import NetflixLogoImage from '../../../assets/LogoLogin.png';
 import Ionicons from '@expo/vector-icons/Ionicons';
-import { useLogin } from '../../hook/index';
+import { useLogin } from '../../services/index';
 import { StackNavigationProp } from '@react-navigation/stack';
 
 type RootStackParamList = {

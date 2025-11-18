@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import Constants from 'expo-constants';
+import axios from 'axios';
 
 interface UserCredentials {
     email: string;
@@ -28,13 +29,8 @@ export const useLogin = () => {
         setLoading(true);
 
         try {
-            const response = await fetch(API_URL);
-
-            if (!response.ok) {
-                throw new Error(`Falha ao conectar à API. Status: ${response.status}`);
-            }
-
-            const usuarios: ApiUser[] = await response.json();
+            const response = await axios.get<ApiUser[]>(API_URL);
+            const usuarios: ApiUser[] = response.data;
 
             const usuarioEncontrado: ApiUser | undefined = usuarios.find(
                 (user: ApiUser) => user.email === email && user.password === password
@@ -46,8 +42,21 @@ export const useLogin = () => {
                 throw new Error('Email ou senha incorretos.');
             }
         } catch (error) {
-            const errorMessage = error instanceof Error ? error.message : 'Erro desconhecido';
-            console.error('Erro de Login:', errorMessage);
+            let errorMessage = 'Erro desconhecido ao tentar fazer login.';
+
+            if (axios.isAxiosError(error)) {
+                if (error.response) {
+                    errorMessage = `Falha ao conectar à API. Status: ${error.response.status}`;
+                } else if (error.request) {
+                    errorMessage = 'Sem resposta da API. Verifique sua conexão de rede.';
+                } else {
+                    errorMessage = error.message;
+                }
+            } else if (error instanceof Error) {
+                errorMessage = error.message;
+            }
+
+            console.error('Erro de Login:', errorMessage, error);
             throw new Error(errorMessage);
         } finally {
             setLoading(false);

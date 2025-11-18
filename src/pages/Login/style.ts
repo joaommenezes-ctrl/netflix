@@ -1,8 +1,7 @@
 import { StyleSheet, Platform } from 'react-native';
 
-const NETFLIX_RED = '#E50914';
 const BACKGROUND_COLOR = '#000000';
-const INPUT_BACKGROUND = '#333333';
+const INPUT_BACKGROUND = '#121212ff';
 const PLACEHOLDER_COLOR = '#A9A9A9';
 const TEXT_COLOR = '#FFFFFF';
 
@@ -38,10 +37,12 @@ export const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     backgroundColor: INPUT_BACKGROUND,
-    borderRadius: 4,
+    borderRadius: 5,
+    borderWidth: 1,
+    borderColor: '#6d6767ff',
     marginHorizontal: 16,
     marginVertical: 8,
-    height: 50,
+    height: 55,
     paddingHorizontal: 15,
   },
 
@@ -70,7 +71,7 @@ export const styles = StyleSheet.create({
   },
 
   forgotPasswordText: {
-    color: PLACEHOLDER_COLOR, 
+    color: TEXT_COLOR, 
     textAlign: 'center',
     marginTop: 25,
     fontSize: 15,
